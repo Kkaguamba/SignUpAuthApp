@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
-    TextView txtSignup;
+    TextView txtSignup, txtForgotPass;
     EditText edtEmail, edtPassword;
     ProgressBar progressBar;
     Button btnSignIn;
@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
         txtSignup = findViewById(R.id.txt_signup);
         edtEmail = findViewById(R.id.email);
         edtPassword = findViewById(R.id.password);
+        txtForgotPass = findViewById(R.id.forgot_pass);
         progressBar = findViewById(R.id.progressBar_signin);
         btnSignIn = findViewById(R.id.btn_signin);
 
@@ -68,6 +69,14 @@ public class Login extends AppCompatActivity {
                 }else {
                     edtEmail.setError("Email field can't be empty!");
                 }
+            }
+        });
+
+        txtForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Login.this, ForgotPassword.class);
+                startActivity(i);
             }
         });
     }

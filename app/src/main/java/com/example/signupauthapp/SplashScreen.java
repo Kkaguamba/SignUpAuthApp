@@ -26,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
                  //presses the back button.
              }
          };
-         handler.postDelayed(runnable,5000);
+         handler.postDelayed(runnable,4000);
     }
     //onDestroy() to remove the callback when the activity is destroyed to prevent memory leaks.
     @Override
